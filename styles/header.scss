@@ -1,0 +1,254 @@
+.header {
+  background-image: url("../assets/header_background.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 50px;
+  height: 815px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 35.33%;
+    left: 53.1%;
+    width: 360px;
+    height: 246px;
+    background-image: url("../assets/header_chart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 57%;
+    width: 804px;
+    height: 554px;
+    background-image: url("../assets/header_statistics.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 4;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    margin-right: 82px;
+    width: 184px;
+  }
+
+  &__logo-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__list {
+    display: flex;
+    gap: 36px;
+
+    .list__item-link {
+      @include roboto-regular;
+      color: $color-text-secondary;
+      font-size: 16px;
+
+      &:hover::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $color-text-secondary;
+        border-radius: 50px;
+      }
+    }
+
+    .list__item>.login__sign-up {
+      display: none;
+    }
+  }
+
+  &__login {
+    margin-left: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.login__button {
+  padding: 10px 53px;
+  background-color: transparent;
+  width: 160px;
+
+  & a {
+    color: $color-text-secondary;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    border: 1px solid $color-dark-grey;
+  }
+
+  &:active {
+    background-color: $color-main-lilo;
+  }
+}
+
+.header__content {
+  margin-top: 152px;
+  margin-bottom: 258px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    @include roboto-bold;
+    font-size: 50px;
+    line-height: 1.2;
+    color: $color-text-white;
+    margin-bottom: 15px;
+  }
+
+  &-text {
+    @include roboto-regular;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-text-secondary;
+    margin-bottom: 50px;
+  }
+
+  &-button {
+    padding: 16px;
+    width: 238px;
+    background-color: $color-main-pink;
+
+    & a {
+      color: $color-text-white;
+    }
+
+    &:hover {
+      background-color: lighten($color-main-pink, 30%);
+    }
+  }
+}
+
+.navigation__burger {
+  // display: block;
+  display: none;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 6;
+}
+
+.navigation__burger span {
+  position: absolute;
+    
+  height: 3px;
+  left: 0;
+  background-color: $color-text-secondary;
+  transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.navigation__burger span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.navigation__burger span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+
+// ---------------------------------------------------------------------------
+@media (max-width: 380px) {
+  .header {
+    background-image: url("../assets/header_background_mobile.png");
+
+    &::after {
+      content: none;
+    }
+
+    &::before {
+      top: 12, 3%;
+      left: 50%;
+      width: 336px;
+      height: 232px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .navigation {
+    height: 70px;
+    box-shadow: 0px 4px 4px 0px #12214D;
+  }
+
+  .navigation__logo {
+    width: 138px;
+  }
+
+  .navigation__list {
+    display: none;
+  }
+
+  .navigation__burger {
+    display: block;
+  }
+
+  .navigation__list {
+    position: absolute;
+    right: -370px;
+    top: 0;
+    width: 370px;
+    background-color: $color-text-blue;
+    padding: 75px 20px 20px 20px;
+    transition: transform .5s;
+  }
+
+  .list__item-link {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .header.navigation_open .navigation__burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header.navigation_open .navigation__burger span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .header.navigation_open .navigation__burger span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  .login__sign-up {
+    display: none;
+  }
+
+  .list__item>.login__sign-up {
+    display: block;
+  }
+
+  .header__content {
+    margin-top: 286px;
+    width: 335px;
+  
+    &-title {
+      font-size: 31px;
+    }
+  
+    &-text {
+      margin-bottom: 26px;
+    }
+  
+    &-button {
+      padding: 16px auto;
+      width: 100%;
+    }
+  }
+
+}

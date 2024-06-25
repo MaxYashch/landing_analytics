@@ -1,0 +1,215 @@
+.footer {
+  background-image: url("../assets/footer_background.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 272px;
+  padding-bottom: 103px;
+  height: 1225px;
+}
+
+.footer__content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  width: 636px;
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    @include roboto-bold;
+    font-size: 40px;
+    line-height: 1.2;
+    color: $color-text-white;
+    margin-bottom: 30px;
+    @include flex-align;
+  }
+
+  &-text {
+    @include roboto-regular;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-text-secondary;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.tariffs {
+  display: flex;
+  // justify-content: space-between;
+  margin-bottom: 100px;
+  gap: 80px;
+}
+
+.tariff {
+  max-width: 340px;  // Максимальная ширина для .tariff
+  width: 100%;
+  padding: 50px 70px 70px;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-dark-blue;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &__title {
+    margin-bottom: 10px;
+    @include roboto-bold;
+    font-size: 30px;
+    @include flex-align;
+    color: $color-text-white;
+  }
+
+  &__description {
+    margin-bottom: 66px;
+    @include flex-align;
+    flex-direction: column;
+    @include roboto-regular;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-text-secondary;
+    position: relative;
+  }
+
+  &__description::after {
+    content: "";
+    position: absolute;
+    bottom: -37px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-blue-line;
+  }
+
+  &__price {
+    @include flex-align;
+    align-items: flex-end;
+    color: $color-text-white;
+
+    &-currency {
+      @include roboto-bold;
+      font-size: 30px;
+    }
+
+    &-value {
+      @include roboto-bold;
+      font-size: 60px;
+    }
+  }
+
+  &__period {
+    @include flex-align;
+    @include roboto-regular;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $color-text-secondary;
+  }
+
+  &__button {
+    max-width: 200px;  // Максимальная ширина для .tariff__button
+    width: 100%;
+    margin-top: 40px;
+    border: 1px solid $color-blue-line;
+    padding: 16px;
+
+    &-link {
+      font-size: 16px;
+      @include roboto-regular;
+      color: $color-text-white;
+    }
+  }
+}
+
+.tariff:hover,
+.tariff:active {
+  background-color: $color-text-white;
+
+  .tariff__title {
+    color: $color-text-blue;
+  }
+
+  .tariff__price {
+    color: $color-text-blue;
+  }
+
+  .tariff__button {
+    border: none;
+    background-color: $color-main-pink;
+  }
+}
+
+.navigation {
+  &__logo-link {
+  }
+
+  &__logo-image {
+  }
+
+  &__list {
+  }
+}
+.footer {
+  &__navigation {
+    align-items: flex-end;
+    justify-content: space-between;
+    border-top: 1px solid $color-blue-line;
+    padding-top: 30px;
+  }
+
+  &__navigation-logo {
+    width: 138px;
+  }
+}
+.list {
+  margin-bottom: 8px;
+  &__item {
+  }
+
+  &__item-link {
+  }
+}
+.social {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &__item {
+  }
+
+  &__item-link {
+  }
+
+  &__item-image {
+  }
+}
+
+// ---------------------------------------------------------------------------
+@media (max-width: 380px) {
+  .footer {
+    background-image: url("../assets/footer_background.png");
+    padding-bottom: 48px;
+    height: 825px;
+  }
+
+  .footer__content {
+    margin-top: 132px;
+    margin-bottom: 42px;
+    width: 336px;
+
+    &-title {
+      @include roboto-bold;
+      font-size: 30px;
+      margin-bottom: 20px;
+      justify-content: flex-start;
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 1.4;
+      justify-content: flex-start;
+    }
+  }
+
+  .footer__navigation-list {
+    display: none;
+  }
+}
