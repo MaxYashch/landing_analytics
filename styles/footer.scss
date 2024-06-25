@@ -36,7 +36,6 @@
 
 .tariffs {
   display: flex;
-  // justify-content: space-between;
   margin-bottom: 100px;
   gap: 80px;
 }
@@ -109,7 +108,8 @@
     width: 100%;
     margin-top: 40px;
     border: 1px solid $color-blue-line;
-    padding: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
     &-link {
       font-size: 16px;
@@ -137,16 +137,16 @@
   }
 }
 
-.navigation {
-  &__logo-link {
-  }
+// .navigation {
+//   &__logo-link {
+//   }
 
-  &__logo-image {
-  }
+//   &__logo-image {
+//   }
 
-  &__list {
-  }
-}
+//   &__list {
+//   }
+// }
 .footer {
   &__navigation {
     align-items: flex-end;
@@ -182,6 +182,10 @@
   }
 }
 
+.tariffs-mobile {
+  display: none;
+}
+
 // ---------------------------------------------------------------------------
 @media (max-width: 380px) {
   .footer {
@@ -206,6 +210,45 @@
       font-size: 14px;
       line-height: 1.4;
       justify-content: flex-start;
+    }
+  }
+
+  .tariffs {
+    display: flex;
+    margin-bottom: 44px;
+    // gap: 80px;
+  }
+  
+  .tariffs-mobile {
+    display: flex;
+    margin-bottom: 44px;
+  }
+
+  .tariff {
+    max-width: 280px;
+    padding: 35px 47px 35px;
+  
+    &__title {
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+  
+    &__description {
+      margin-bottom: 50px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  
+    &__description::after {
+      bottom: -29px;
+    }
+    
+    &__period {
+      font-size: 13px;
+    }
+  
+    &__button {
+      margin-top: 35px;
     }
   }
 
