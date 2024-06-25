@@ -41,7 +41,7 @@
 }
 
 .tariff {
-  max-width: 340px;  // Максимальная ширина для .tariff
+  max-width: 340px; // Максимальная ширина для .tariff
   width: 100%;
   padding: 50px 70px 70px;
   display: flex;
@@ -104,7 +104,7 @@
   }
 
   &__button {
-    max-width: 200px;  // Максимальная ширина для .tariff__button
+    max-width: 200px; // Максимальная ширина для .tariff__button
     width: 100%;
     margin-top: 40px;
     border: 1px solid $color-blue-line;
@@ -216,37 +216,42 @@
   .tariffs {
     display: flex;
     margin-bottom: 44px;
-    // gap: 80px;
   }
   
   .tariffs-mobile {
-    display: flex;
     margin-bottom: 44px;
+    display: flex;
+    gap: 20px;
+    // overflow-x: scroll;
+    // scroll-padding: 0 50%;
+    scroll-snap-type: x mandatory;
   }
 
   .tariff {
     max-width: 280px;
     padding: 35px 47px 35px;
-  
+    scroll-snap-align: center;
+    display: inline-block;
+
     &__title {
       font-size: 25px;
       margin-bottom: 7px;
     }
-  
+
     &__description {
       margin-bottom: 50px;
       font-size: 13px;
       line-height: 1.4;
     }
-  
+
     &__description::after {
       bottom: -29px;
     }
-    
+
     &__period {
       font-size: 13px;
     }
-  
+
     &__button {
       margin-top: 35px;
     }
