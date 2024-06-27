@@ -137,29 +137,20 @@
   }
 }
 
-// .navigation {
-//   &__logo-link {
-//   }
-
-//   &__logo-image {
-//   }
-
-//   &__list {
-//   }
-// }
 .footer {
   &__navigation {
     align-items: flex-end;
     justify-content: space-between;
     border-top: 1px solid $color-blue-line;
-    padding-top: 30px;
+    padding-top: 63px;
   }
 
   &__navigation-logo {
     width: 138px;
   }
 }
-.list {
+
+.navigation__list {
   margin-bottom: 8px;
   &__item {
   }
@@ -167,6 +158,7 @@
   &__item-link {
   }
 }
+
 .social {
   display: flex;
   align-items: center;
@@ -189,13 +181,16 @@
 // ---------------------------------------------------------------------------
 @media (max-width: 380px) {
   .footer {
-    background-image: url("../assets/footer_background.png");
+    background-image: url("../assets/footer_background_mobile.png");
+    background-size: cover; /* Изображение будет растягиваться на всю ширину и высоту контейнера */
+    background-position: center;
+    width: 100%;
     padding-bottom: 48px;
-    height: 825px;
+    padding-top: 132px;
+    // height: 825px;
   }
 
   .footer__content {
-    margin-top: 132px;
     margin-bottom: 42px;
     width: 336px;
 
@@ -209,29 +204,29 @@
     &-text {
       font-size: 14px;
       line-height: 1.4;
-      justify-content: flex-start;
+      text-align: start;
     }
   }
 
-  .tariffs {
-    display: flex;
-    margin-bottom: 44px;
+  .footer__content-text_mobile {
+    display: none;
   }
-  
+
   .tariffs-mobile {
-    margin-bottom: 44px;
+    // margin-bottom: 44px;
     display: flex;
     gap: 20px;
-    // overflow-x: scroll;
-    // scroll-padding: 0 50%;
+    overflow-x: auto;
+    scroll-padding: 0 50%;
     scroll-snap-type: x mandatory;
   }
 
   .tariff {
-    max-width: 280px;
-    padding: 35px 47px 35px;
-    scroll-snap-align: center;
-    display: inline-block;
+    width: 280px;
+    padding-left: 30px;
+    padding-right: 30px;
+    // scroll-snap-align: center;
+    // flex-shrink: 0.5;
 
     &__title {
       font-size: 25px;
@@ -257,7 +252,15 @@
     }
   }
 
+  .footer__navigation {
+    box-shadow: none;
+  }
+
   .footer__navigation-list {
     display: none;
+  }
+
+  .social {
+    margin-bottom: 4px;
   }
 }

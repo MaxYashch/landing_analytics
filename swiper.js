@@ -45,3 +45,11 @@
 // }
 
 // init();
+
+document.addEventListener("DOMContentLoaded", function() {
+    const tariffsMobile = document.querySelector('.tariffs-mobile');
+    const secondTariff = tariffsMobile.querySelector('.tariff:nth-child(2)');
+    secondTariff.scrollIntoView({ inline: 'center', behavior: 'smooth' });
+  });
+
+  
